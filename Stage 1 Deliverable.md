@@ -22,11 +22,11 @@ Our Company expects to receive **€20,000,000 in one year** from a European aer
 
 ## Background & Objectives 
 
-As we invoice in euros but report in dollars, the resulting **FX exposure** leaves us vulnerable to euro depreciation. For example, a 5% decline in EUR/USD would reduce our value by around **1.1 million**. Our primary objectives should be **stablizing cash inflows** and **protecting profit margins** from unfavorable exchange rate movements, establishing forseeable finacial performance.
+As we invoice in euros but report in dollars, the resulting **FX exposure** leaves us vulnerable to euro depreciation. For example, a 5% decline in EUR/USD would reduce our value by around **1.1 million**. Our primary objectives should be **stabilizing cash inflows** and **protecting profit margins** from unfavorable exchange rate movements, establishing foreseeable financial performance.
 
 ---
 
-## Mehtods: Heding Strategies Overview
+## Methods: Hedging Strategies Overview
 
 We will evaluate three common hedge families:
 
@@ -34,7 +34,7 @@ We will evaluate three common hedge families:
 - *Pros:* Playing it safe, eliminates FX uncertainty with no upfront premium.
 - *Cons:* Forfeits the upside if the euro decides to strengthen.
 
-**Money Market Hedge** - Borrow euros and invest USD now to lcok in the forward rate.
+**Money Market Hedge** - Borrow euros and invest USD now to lock in the forward rate.
 - *Pros:* Mechanically replicates forward rate
 - *Cons:* Affects liquidity
 
