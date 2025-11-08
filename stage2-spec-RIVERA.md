@@ -1,7 +1,7 @@
 # [Spec Title] – Technical Specification Template
 
-**Created by:** [name]  
-**Updated by:** [name]  
+**Created by:** Matthew Rivera  
+**Updated by:**   
 **Date Created:** [date]  
 **Date Updated:** [date]  
 **Version:** [0.0]
