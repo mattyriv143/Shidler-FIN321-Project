@@ -10,7 +10,7 @@
 
 **Version:** 2.0
 
-**LLM Used:"" GPT-5
+**LLM Used:** GPT-5
 
 **Role:** Financial Analyst 
 
