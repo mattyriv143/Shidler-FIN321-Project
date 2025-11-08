@@ -22,7 +22,7 @@
 
 ## 1. Problem Statement
 
-Our firm, an aerospace manfacturer based in the U.S., expects to receive **€20,000,000 in 12 months** from a European customer. Because our financial statments and operating costs are designated in **USD**, this receivable creates risk of **foreign exhange exposure** to fluctuations in the **EUR/USD** rate. At today's **spot rate of 1.16**, the receivable is worth approximately **23.2 million**. However, the **1-year forward rate of 1.0890** shows that the market expects the euro to weaken. The objective of this analysis is to quantify, compare, and evaluate alternative hedging strategies to stabilize dollar proceeds. This specification details the structure of a spreadsheet model that supports decisions at the Treasury and CFO levels.
+Our firm, an aerospace manufacturer based in the U.S., expects to receive **€20,000,000 in 12 months** from a European customer. Because our financial statements and operating costs are designated in **USD**, this receivable creates risk of **foreign exchange exposure** to fluctuations in the **EUR/USD** rate. At today's **spot rate of 1.16**, the receivable is worth approximately **23.2 million**. However, the **1-year forward rate of 1.0890** shows that the market expects the euro to weaken. The objective of this analysis is to quantify, compare, and evaluate alternative hedging strategies to stabilize dollar proceeds. This specification details the structure of a spreadsheet model that supports decisions at the Treasury and CFO levels.
 
 
 ---
@@ -76,12 +76,12 @@ This model will follow a structured sequence to evaluate each hedge family.
 1. Simulate EUR/USD spot rates at maturity (**S_T**) 1.00 ± 10%.
 2. For each S_T, compute:
    - **Put hedge:** If S_T < K_put → exercise put; else use default market rate.
-   - **Call hedge:** If S_T > K_call → exercise call; else use defualt market rate.
+   - **Call hedge:** If S_T > K_call → exercise call; else use default market rate.
 3. Subtract premiums from gross proceeds.
 4. Record net USD outcomes for each hedge type.
 
 ### Step 4: Sensitivity & Comparison 
-- Arrange USD outcomdx under each strategy across S_T values.
+- Arrange USD outcomes under each strategy across S_T values.
 - Generate a line chart comparing hedge payoffs vs S_T.
 - Identify breakeven points and expected outcome values.
 
