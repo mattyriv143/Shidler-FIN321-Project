@@ -1,13 +1,19 @@
 # Quantitative Specification - FX Hedging Model (U.S. Aerospace Manufacturer)
 
 **Created by:** Matthew Rivera  
+
 **Updated by:** Matthew Rivera
+
 **Date Created:** November 7, 2025  
+
 **Date Updated:** November 27, 2025 
+
 **Version:** 2.0
+
 **LLM Used:"" GPT-5
 
 **Role:** Financial Analyst 
+
 **Audience:** CFO   
 
 **Purpose:** Provide a professional, quantitative specification outlining the analytical structure for evaluating FX hedging alternatives.
