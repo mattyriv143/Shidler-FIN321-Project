@@ -49,7 +49,7 @@ Please create an Excel Model with the following specifications:
 
 The Excel model must include the following sections and calculations:
 
-#### **Forward Hedge Calculation**
+### **Forward Hedge Calculation**
 - Calculate **USD proceeds** under the forward hedge as:  
   `USD_forward = FC_AMT * F0_in`
 
