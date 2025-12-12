@@ -1,0 +1,108 @@
+# AI Prompot for FX Hedge Model Excel Generation
+
+## A. Scenario-Specific Variables
+
+Please use the following real market data values to complete the model:
+
+1. **FC_AMT (EUR receivable):** 20,000,000 EUR
+2. **Spot Rate (S₀):** 1.16 USD/EUR 
+3. **Forward Rate (F₀):** 1.089 USD/EUR 
+4. **USD 1-year Interest Rate (r_USD):** 3.87% 
+5. **EUR 1-year Interest Rate (r_EUR):** 2.12% 
+6. **Put Strike (K_put):** 1.16 USD/EUR 
+7. **Call Strike (K_call):** 1.16 USD/EUR 
+8. **Put Premium (Premium_put):** 0.019 USD/EUR
+9. **Call Premium (Premium_call):** 0.024 USD/EUR
+10. **Time to Maturity (T_days):** 365 days
+11. **Time to Maturity in Years (T_YRS):** 1 year 
+
+# B. Context Files 
+Use the logic in:
+- https://1drv.ms/x/c/2faf880c34cf60d1/IQBxQWYEfvq7TIq1A_zBMIKPAb3q8kooZTdONvig4ZLjyCs?e=gKQWeu&nav=MTVfezAwMDAwMDAwLTAwMDEtMDAwMC0wMDAwLTAwMDAwMDAwMDAwMH0
+- https://github.com/mattyriv143/Shidler-FIN321-Project/blob/main/stage2-spec-RIVERA.md
+
+## C. Excel Spreadsheet Requirements
+
+Please create an Excel Model with the following specifications: 
+
+### 1. Named Ranges
+- **FC_AMT** = 20,000,000 (Foreign currency receivable, EUR)
+- **S0_in** = 1.16 (Spot rate, USD/EUR)
+- **F0_in** = 1.089 (Forward rate, USD/EUR)
+- **R_USD** = 0.0387 (USD 1-year interest rate, decimal form)
+- **R_FC** = 0.0212 (EUR 1-year interest rate, decimal form)
+- **K_PUT** = 1.16 (Put strike, USD/EUR)
+- **K_CALL** = 1.16 (Call strike, USD/EUR)
+- **PREM_PUT** = 0.019 (Put premium, USD/EUR)
+- **PREM_CALL** = 0.024 (Call premium, USD/EUR)
+- **T_DAYS** = 365 (Time to maturity in days)
+- **T_YRS** = 1 (Time to maturity in years, T_DAYS / 365)
+
+### 2. Color Coding
+
+- **Yellow = Inputs / Decision Variables**: Highlight all cells in the **Inputs** section (e.g., FC_AMT, Spot, Forward, interest rates, strike prices, and premiums).
+- **Blue = Assumptions**: Highlight cells where assumptions are made (e.g., interest rate conventions, no credit risk).
+- **Green = Formulas**: Highlight cells containing calculations for each hedge (e.g., Forward, Money Market, Options).
+- **Gray = Outputs / KPIs**: Highlight results and summary output cells (e.g., USD proceeds, hedge outcomes).
+
+### 3. Model Components
+
+The Excel model must include the following sections and calculations:
+
+#### **Forward Hedge Calculation**
+- Calculate **USD proceeds** under the forward hedge as:  
+  `USD_forward = FC_AMT * F0_in`
+
+#### **Money Market Hedge (3-step)**
+1. **Borrow EUR Now**:  
+   `PV_EUR = FC_AMT / (1 + R_FC)`
+2. **Convert EUR to USD**:  
+   `USD_today_from_borrow = PV_EUR * S0_in`
+3. **Invest USD for 1 Year**:  
+   `USD_future_mm = USD_today_from_borrow * (1 + R_USD)`
+
+   #### **Money Market Hedge (3-step)**
+1. **Borrow EUR Now**:  
+   `PV_EUR = FC_AMT / (1 + R_FC)`
+2. **Convert EUR to USD**:  
+   `USD_today_from_borrow = PV_EUR * S0_in`
+3. **Invest USD for 1 Year**:  
+   `USD_future_mm = USD_today_from_borrow * (1 + R_USD)`
+
+#### **Option Hedges (Put and Call)**
+1. **Put Option**:  
+   Calculate the **gross** USD proceeds based on the put strike:  
+   `USD_put_gross = FC_AMT * MAX(K_PUT, S_T)`  
+   Subtract the premium to get **net** proceeds:  
+   `USD_put_net = USD_put_gross - PREM_PUT * FC_AMT`
+2. **Call Option**:  
+   Calculate the **net** USD proceeds from a call hedge:  
+   `USD_call_net = FC_AMT * MAX(S_T, K_CALL) - PREM_CALL * FC_AMT`  
+
+#### **Sensitivity Table (±5% in EUR/USD)**
+- Vary the **ending spot rate** (S_T) from **0.95 × S₀** to **1.05 × S₀** in **1% increments**.
+- For each **S_T**, calculate the **USD proceeds** under the forward, money market, and options hedges.
+- Create a **table** showing the results for each strategy at each ending spot rate.
+- Optionally, include a **chart** comparing hedge outcomes visually.
+
+#### **Cross-checks**
+- **Parity Check:** Ensure the **money market hedge** proceeds align closely with the **forward hedge**. Calculate the difference and flag any discrepancies.
+- **Formula Consistency:** Ensure all formulas are correct and consistent. For example, forward hedge formulas should reference the forward rate, money market formulas should use the interest rates, and option hedge formulas should follow the appropriate strike logic.
+- Ensure the model is clean and organized
+
+### 5. Verification
+- **Validate Parity:** Ensure that the money market hedge proceeds are close to the forward hedge result (allow for minor rounding differences).
+- **Confirm Named Ranges:** Make sure all named ranges, such as **FC_AMT**, **S0_in**, **F0_in**, etc., are correctly defined.
+- **Full Formula Mapping:** Provide a list of all formulas used in the model, including the specific logic behind the forward, money market, and option hedging calculations.
+
+### 6. Output Summary
+
+- **Forward Hedge Result**: USD proceeds from the forward hedge.
+- **Money Market Hedge Result**: USD proceeds from the money market hedge.
+- **Option Hedges**: Results of both the put and call hedges across varying spot rates.
+- **Sensitivity Table**: A table and/or chart displaying hedge outcomes under different EUR/USD rates.
+- **Summary & Recommendation Placeholder**: A section to summarize the analysis and provide a placeholder for the final recommendation.
+
+
+### 7. Export 
+- **Downloadable .xlsx File:** Once completed, the model should be saved as an Excel (.xlsx) file that is ready for review.
