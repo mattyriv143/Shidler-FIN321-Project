@@ -1,5 +1,6 @@
 # **FX Hedging Project**
 **Author:** Matthew Rivera
+
 **Date:** December 12, 2025
 
 ---
